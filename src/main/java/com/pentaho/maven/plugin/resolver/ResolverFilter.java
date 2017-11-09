@@ -16,4 +16,16 @@ public class ResolverFilter {
     public Boolean getTransitive() {
         return transitive;
     }
+
+    public void setInclude(String include) {
+        this.include = include;
+    }
+
+    public void setExclude(String exclude) {
+        this.exclude = exclude;
+    }
+
+    public void setTransitive(Boolean transitive) {
+        this.transitive = transitive;
+    }
 }
