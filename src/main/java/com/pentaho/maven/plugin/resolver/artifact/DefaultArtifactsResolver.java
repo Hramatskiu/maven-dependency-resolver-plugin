@@ -38,15 +38,6 @@ public class DefaultArtifactsResolver implements ArtifactResolver {
                                                      ResolverFilter resolverFilter ) {
 
         Set<Artifact> resolvedArtifacts = new HashSet<Artifact>();
-//        Set<Artifact> transitiveArtifacts = new HashSet<Artifact>();
-//
-//        for ( Artifact artifact : configuration.getMavenProject().getArtifacts() ) {
-//            for ( String include : resolverFilter.getInclude().split( "," ) ) {
-//                if ( FilterMaskTransformerUtil.filterWithMask( artifact, FilterMaskTransformerUtil.splitSingleMask( include ) ) ) {
-//                    transitiveArtifacts.add( artifact );
-//                }
-//            }
-//        }
 
         if ( resolverFilter.getTransitive() ) {
             resolvedArtifacts.addAll( resolveTransitively( configuration, configuration.getMavenProject().getDependencyArtifacts() ).getArtifacts() );
